@@ -1,33 +1,26 @@
+import { FaEye, FaWhatsapp } from 'react-icons/fa'; // Importar íconos de ojo y WhatsApp
+
 export const shops = [
 	{
-		nombre: "Ropa uno",
+		nombre: "Camisa Básica",
 		precio: 50000,
-		img: "./vite.svg",
+		img: "https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&w=600",
+		tipo: "Camisa",
+		descripcion: "Camisa básica color gris con corte en V",
 	},
 	{
-		nombre: "Ropa dos",
+		nombre: "Tenis Deportivos",
 		precio: 10000,
-		img: "./vite.svg",
+		img: "https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600",
+		tipo: "Tenis",
+		descripcion: "Tenis deportivos cómodos y elegantes",
 	},
 	{
-		nombre: "Ropa tres",
+		nombre: "Jeans Azules",
 		precio: 20000,
-		img: "./vite.svg",
+		img: "https://images.pexels.com/photos/1503009/pexels-photo-1503009.jpeg?auto=compress&cs=tinysrgb&w=600",
+		tipo: "Jeans",
+		descripcion: "Jeans azules de corte moderno",
 	},
-	{
-		nombre: "Ropa cuatro",
-		precio: 30000,
-		img: "./vite.svg",
-	},
-	{
-		nombre: "Ropa cinco",
-		precio: 200000,
-		img: "./vite.svg",
-	},
-	{
-		nombre: "Ropa seis",
-		precio: 20000,
-		img: "./vite.svg",
-	},
-
+	// Agregar más productos si es necesario
 ];
