@@ -28,39 +28,52 @@ function Start() {
 					</h1>
 					<div className="grid sm:grid-cols-3 xs:grid-cols-1 gap-8 place-content-between">
 						{shops.map((shop, index) => {
-							const { nombre, precio, img, tipo, descripcion } = shop;
+							const { nombre, precio, img, imgHover, tipo, descripcion } = shop;
 							return (
 								<div key={index} className="flex justify-center">
-									<div className="overflow-hidden rounded-lg shadow-lg border bg-zinc-200 p-6 h-[550px] w-full flex flex-col">
-										{/* Imagen con iconos sobre ella */}
+									<div className="overflow-hidden rounded-lg shadow-lg border bg-zinc-200 p-7 h-[500px] w-full flex flex-col">
+										{/* Contenedor de la imagen */}
 										<div className="relative w-full h-2/3">
-											<img className="w-full h-full object-cover rounded-lg" src={img} alt={nombre} />
+											{/* Imagen principal (cambia al hover) */}
+											<img
+												src={img} // Imagen principal
+												alt={nombre}
+												className="w-full h-full object-cover rounded-lg transition-all duration-500 ease-in-out"
+											/>
+
+											{/* Imagen alternativa que aparece al hover */}
+											<img
+												src={imgHover} // Segunda imagen
+												alt={nombre}
+												className="absolute top-0 left-0 w-full h-full object-cover rounded-lg transition-all duration-500 ease-in-out transform scale-100 opacity-0 hover:scale-110 hover:opacity-100" // Transición de zoom en la imagen de hover
+											/>
 
 											{/* Icono de ojo */}
-											<div className="absolute top-3 left-3 bg-white rounded-full p-2 cursor-pointer opacity-80 hover:opacity-100">
-												<FaEye size={24} color="black" />
+											<div className="absolute top-3 left-3 bg-white p-2 rounded-full shadow-md opacity-100 hover:opacity-50 transition-opacity duration-300">
+												<FaEye size={24} className="text-gray-800" />
 											</div>
 										</div>
 
-										{/* Información debajo de la imagen */}
-										<div className="pt-4 flex flex-col justify-between flex-grow">
-											<p className="text-lg font-semibold text-gray-700">{tipo}</p>
-											<p className="text-gray-600 text-sm">{descripcion}</p>
-											<p className="text-xl font-bold text-gray-900">${precio}</p>
+										{/* Información de la prenda */}
+										<div className="mt-4 text-center">
+											<h3 className="text-stone-900 text-xl font-bold">{nombre}</h3>
+											<p className="font-serif text-stone-900 font-semibold text-lg py-2">${precio}</p>
+											<p className="text-sm text-gray-500">Camisa básica, corte V</p>
 										</div>
 
 										{/* Botón de compra */}
 										<div className="mt-4 text-center">
-											<button
-												className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition"
-												onClick={() => handleWhatsApp(img, nombre)}
+											<a
+												href={`https://wa.me/1234567890?text=Me%20interesa%20este%20articulo%20${nombre}`}
+												className="bg-green-500 text-white py-2 px-4 rounded-lg text-sm"
 											>
-												<FaWhatsapp size={20} className="mr-2" />
 												Comprar
-											</button>
+											</a>
 										</div>
 									</div>
 								</div>
+
+
 							);
 						})}
 					</div>
