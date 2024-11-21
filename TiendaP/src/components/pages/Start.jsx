@@ -1,14 +1,17 @@
+import Footer from "../Footer";
 import Header from "../Header";
 import { shops } from "../mocks/MockIndex";
 import { FaEye, FaWhatsapp } from 'react-icons/fa'; // Importa el icono de ojo y Whatsapp
+import { useNavigate } from "react-router-dom";
 
 
 function Start() {
-	const handleWhatsApp = (img, nombre) => {
-		const message = `Me interesa este artículo: ${nombre}`;
-		const url = `https://wa.me/?text=${encodeURIComponent(message)}%0A${encodeURIComponent(img)}`;
-		window.open(url, "_blank");
-	};
+	// const handleWhatsApp = (img, nombre) => {
+	// 	const message = `Me interesa este artículo: ${nombre}`;
+	// 	const url = `https://wa.me/?text=${encodeURIComponent(message)}%0A${encodeURIComponent(img)}`;
+	// 	window.open(url, "_blank");
+	// };
+	const navigate = useNavigate();
 
 	return (
 		<>
@@ -28,7 +31,7 @@ function Start() {
 					</h1>
 					<div className="grid sm:grid-cols-3 xs:grid-cols-1 gap-8 place-content-between">
 						{shops.map((shop, index) => {
-							const { nombre, precio, img, imgHover, tipo, descripcion } = shop;
+							const { id, nombre, precio, img, imgHover, tipo, descripcion } = shop;
 							return (
 								<div key={index} className="flex justify-center">
 									<div className="overflow-hidden rounded-lg shadow-lg border bg-zinc-200 p-7 h-[500px] w-full flex flex-col">
@@ -49,8 +52,12 @@ function Start() {
 											/>
 
 											{/* Icono de ojo */}
-											<div className="absolute top-3 left-3 bg-white p-2 rounded-full shadow-md opacity-100 hover:opacity-50 transition-opacity duration-300">
+											<div className="absolute top-3 left-3 bg-white p-2 rounded-full shadow-md opacity-100 hover:opacity-50 transition-opacity duration-300 cursor-pointer"
+												key={id}
+												onClick={() => navigate(`/prenda/${id}`)}>
+
 												<FaEye size={24} className="text-gray-800" />
+
 											</div>
 										</div>
 
@@ -65,6 +72,7 @@ function Start() {
 										<div className="mt-4 text-center">
 											<a
 												href={`https://wa.me/1234567890?text=Me%20interesa%20este%20articulo%20${nombre}`}
+												target="_blank"
 												className="bg-green-500 text-white py-2 px-4 rounded-lg text-sm"
 											>
 												Comprar
@@ -78,6 +86,7 @@ function Start() {
 						})}
 					</div>
 				</div>
+				<Footer />
 			</div>
 		</>
 	);
