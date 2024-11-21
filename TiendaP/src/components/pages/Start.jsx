@@ -1,20 +1,15 @@
 import Footer from "../Footer";
 import Header from "../Header";
 import { shops } from "../mocks/MockIndex";
-import { FaEye, FaWhatsapp } from 'react-icons/fa'; // Importa el icono de ojo y Whatsapp
+import { FaEye } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import ScrollToTopButton from "../mocks/ScrollToTopButton"; // Importa el componente
 
 function Start() {
-	// const handleWhatsApp = (img, nombre) => {
-	// 	const message = `Me interesa este artículo: ${nombre}`;
-	// 	const url = `https://wa.me/?text=${encodeURIComponent(message)}%0A${encodeURIComponent(img)}`;
-	// 	window.open(url, "_blank");
-	// };
 	const navigate = useNavigate();
 
 	return (
-		<div className="flex flex-col min-h-screen"> {/* Contenedor principal */}
+		<div className="flex flex-col min-h-screen">
 			{/* Marquee */}
 			<div className="bg-black text-white fixed top-0 w-full z-50">
 				<marquee className="py-2" scrollamount="8">
@@ -87,6 +82,9 @@ function Start() {
 					</div>
 				</div>
 			</div>
+
+			{/* Botón de scroll al inicio */}
+			<ScrollToTopButton />
 
 			{/* Footer */}
 			<Footer />
