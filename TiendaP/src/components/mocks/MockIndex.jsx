@@ -1,7 +1,7 @@
 import { FaEye, FaWhatsapp } from 'react-icons/fa'; // Importar íconos de ojo y WhatsApp
 
 export const shops = [
-	{  
+	{
 		id: 1,
 		nombre: "Camisa Básica",
 		precio: 50000,
@@ -21,6 +21,15 @@ export const shops = [
 	},
 	{
 		id: 3,
+		nombre: "Jeans Azules",
+		precio: 20000,
+		img: "https://images.pexels.com/photos/1503009/pexels-photo-1503009.jpeg?auto=compress&cs=tinysrgb&w=600",
+		imgHover: "https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&w=600", // Imagen que aparece al pasar el cursor
+		tipo: "Jeans",
+		descripcion: "Jeans azules de corte moderno",
+	},
+	{
+		id: 4,
 		nombre: "Jeans Azules",
 		precio: 20000,
 		img: "https://images.pexels.com/photos/1503009/pexels-photo-1503009.jpeg?auto=compress&cs=tinysrgb&w=600",
