@@ -6,11 +6,18 @@ const categories = {
         Camisas: ["Manga Corta", "Manga Larga", "Estampadas", "Lisas"],
         Camisetas: ["Manga Corta", "Manga Larga", "Oversize", "Con Estampado"],
         Pantalones: ["Jeans", "Slim Fit", "Regular Fit", "Skinny", "Joggers", "Casual", "Deportivo"],
+        Chaquetas: ["Sin Capota", "Con Capota", "Blazers", "Gabanes"],
+        Buzos: ["Básicos", "Estampados", "Cremallera", "Con Capucha"],
+
+
     },
     Mujeres: {
         Blusas: ["Manga Corta", "Manga Larga", "Con Estampado", "Básicas", "Elegantes"],
         Vestidos: ["Casuales", "De Noche", "De Oficina", "Con Estampados", "Largos"],
         Faldas: ["Cortas", "Largas", "Con Estampado", "De Cintura Alta"],
+        Chaquetas: ["Sin Capota", "Con Capota", "Blazers", "Gabanes", "Cuero",],
+        Vaqueros: ["Skinny", "Mom Fit", "Bootcut", "De Cintura Alta",]
+
     },
 };
 
