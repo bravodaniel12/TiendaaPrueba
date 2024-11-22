@@ -1,15 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { shops } from "../mocks/MockIndex";
 import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import { useCart } from "../context/CartContext";
 import Footer from "../Footer";
 import ScrollToTopButton from "../mocks/ScrollToTopButton"; // Importa el componente
-
+import Header from "../Header";
 
 function ShowGarment() {
     const { id } = useParams(); // Obtén el ID desde la URL
+    const navigate = useNavigate();
+    const { addToCart } = useCart();
     const garment = shops.find((item) => item.id === parseInt(id));
 
     // Manejo de la imagen seleccionada
@@ -19,6 +23,10 @@ function ShowGarment() {
         return <p>Prenda no encontrada</p>;
     }
 
+    const handleAddToCart = () => {
+        addToCart(garment); // Agrega la prenda al carrito
+    };
+
     return (
         <>
             {/* Marquee */}
@@ -27,6 +35,7 @@ function ShowGarment() {
                     - Ropa nueva todas las semanas🔥 - Estilos y tendencias😲😮 - Lo Mejor en calzado 👟 - ¡Descubre nuestras ofertas exclusivas!♥️ - Promociones imperdibles🤑💸
                 </marquee>
             </div>
+            <Header />
 
             {/* Contenido principal */}
             <div className="p-10 mt-14 flex flex-col lg:flex-row items-start justify-center gap-10">
@@ -65,7 +74,10 @@ function ShowGarment() {
 
                     {/* Botones */}
                     <div className="flex gap-4">
-                        <button className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-lg transition-all">
+                        <button
+                            onClick={handleAddToCart}
+                            className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-lg transition-all"
+                        >
                             <FaShoppingCart size={20} />
                             Agregar al carrito
                         </button>

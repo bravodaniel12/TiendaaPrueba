@@ -20,6 +20,24 @@ function Start() {
 			{/* Header */}
 			<Header />
 
+			<div className="flex items-center w-1/3 px-4 py-4">
+				<input
+					type="text"
+					placeholder="Filtrar por .."
+					className="border border-gray-300 rounded-full px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-400"
+				/>
+			</div>
+			{/* Contenido para probar el scroll */}
+			<div className="p-6">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan velit non justo porttitor,
+					non gravida lorem scelerisque. Duis ut fermentum libero. Etiam tincidunt libero ut ligula vehicula
+					vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+				</p>
+				<p>
+					[Contenido adicional para simular el desplazamiento]
+				</p>
+			</div>
 			{/* Contenido principal */}
 			<div className="flex-grow bg-[#f5f5f4] pt-1">
 				<div className="w-full md:px-40 xs:px-6 py-8">
