@@ -3,11 +3,13 @@ import { FaEye, FaWhatsapp } from 'react-icons/fa'; // Importar íconos de ojo y
 export const shops = [
 	{
 		id: 1,
+		genero: "Hombres",
 		nombre: "Camisa Básica",
 		precio: 50000,
 		img: "https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&w=600",
 		imgHover: "https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600", // Imagen que aparece al pasar el cursor
-		tipo: "Camisa",
+		tipo: "Camisas",
+		subtipo: "Manga Corta",
 		descripcion: "Camisa básica color gris con corte en V",
 		subImages: [
 			"https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -17,11 +19,13 @@ export const shops = [
 	},
 	{
 		id: 2,
+		genero: "Hombres",
 		nombre: "Tenis Deportivos",
 		precio: 10000,
 		img: "https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600",
 		imgHover: "https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&w=600", // Imagen que aparece al pasar el cursor
-		tipo: "Tenis",
+		tipo: "Camisetas",
+		subtipo: "Manga Larga",
 		descripcion: "Tenis deportivos cómodos y elegantes",
 		subImages: [
 			"https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -31,11 +35,13 @@ export const shops = [
 	},
 	{
 		id: 3,
+		genero: "Hombres",
 		nombre: "Jeans Azules",
 		precio: 20000,
 		img: "https://images.pexels.com/photos/1503009/pexels-photo-1503009.jpeg?auto=compress&cs=tinysrgb&w=600",
 		imgHover: "https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&w=600", // Imagen que aparece al pasar el cursor
-		tipo: "Jeans",
+		tipo: "Pantalones",
+		subtipo: "Drill",
 		descripcion: "Jeans azules de corte moderno",
 		subImages: [
 			"https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -45,11 +51,13 @@ export const shops = [
 	},
 	{
 		id: 4,
+		genero: "Hombres",
 		nombre: "Jeans Azules",
 		precio: 20000,
 		img: "https://images.pexels.com/photos/1503009/pexels-photo-1503009.jpeg?auto=compress&cs=tinysrgb&w=600",
 		imgHover: "https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&w=600", // Imagen que aparece al pasar el cursor
-		tipo: "Jeans",
+		tipo: "Pantalones",
+		subtipo: "Pantaloneta",
 		descripcion: "Jeans azules de corte moderno",
 		subImages: [
 			"https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600",
