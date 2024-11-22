@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { shops } from "../mocks/MockIndex";
 import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
@@ -12,8 +11,7 @@ import Header from "../Header";
 
 function ShowGarment() {
     const { id } = useParams(); // Obtén el ID desde la URL
-    const navigate = useNavigate();
-    const { addToCart } = useCart();
+    const { addToCart, cart } = useCart();
     const garment = shops.find((item) => item.id === parseInt(id));
 
     // Manejo de la imagen seleccionada
@@ -24,7 +22,15 @@ function ShowGarment() {
     }
 
     const handleAddToCart = () => {
-        addToCart(garment); // Agrega la prenda al carrito
+        // Verifica si el artículo ya está en el carrito
+        const isInCart = cart.some((item) => item.id === garment.id);
+
+        if (isInCart) {
+            console.log(`${garment.nombre} ya está en el carrito. No se puede agregar nuevamente.`);
+        } else {
+            addToCart(garment);  // Agrega la prenda al carrito si no está presente
+            console.log(`${garment.nombre} ha sido agregado al carrito`);  // Muestra el mensaje en la consola
+        }
     };
 
     return (
@@ -38,17 +44,16 @@ function ShowGarment() {
             <Header />
 
             {/* Contenido principal */}
-            <div className="p-10 mt-14 flex flex-col lg:flex-row items-start justify-center gap-10">
+            <div className="flex flex-col lg:flex-row items-center justify-center p-10 xs:p-2 md:mt-14 gap-10">
                 {/* Subimágenes */}
                 {garment.subImages && garment.subImages.length > 0 && (
-                    <div className="flex flex-row md:flex-col items-center gap-4">
+                    <div className="flex flex-row lg:flex-col items-center gap-4 lg:gap-6">
                         {garment.subImages.map((img, index) => (
                             <img
                                 key={index}
                                 src={img}
                                 alt={`Subimagen ${index + 1}`}
-                                className={`w-20 h-20 object-cover rounded-lg shadow-lg cursor-pointer transition-all ${selectedImage === img ? "border-2 border-black scale-105" : ""
-                                    }`}
+                                className={`w-24 h-20 object-cover rounded-lg shadow-lg cursor-pointer transition-all ${selectedImage === img ? "border-2 border-black scale-105" : ""}`}
                                 onClick={() => setSelectedImage(img)}
                             />
                         ))}
@@ -56,7 +61,7 @@ function ShowGarment() {
                 )}
 
                 {/* Imagen seleccionada con zoom */}
-                <div className="flex justify-center">
+                <div className="flex justify-center w-full">
                     <Zoom>
                         <img
                             src={selectedImage}
@@ -67,16 +72,16 @@ function ShowGarment() {
                 </div>
 
                 {/* Información del producto */}
-                <div className="flex flex-col gap-6 max-w-lg">
+                <div className="flex flex-col gap-6 max-w-lg mx-auto">
                     <h1 className="text-4xl font-bold text-gray-800">{garment.nombre}</h1>
                     <p className="text-xl font-semibold text-gray-700">Precio: ${garment.precio}</p>
                     <p className="text-gray-600">{garment.descripcion}</p>
 
                     {/* Botones */}
-                    <div className="flex gap-4">
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 xs:gap-2">
                         <button
                             onClick={handleAddToCart}
-                            className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-lg transition-all"
+                            className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-lg transition-all w-full sm:w-auto"
                         >
                             <FaShoppingCart size={20} />
                             Agregar al carrito
@@ -85,13 +90,14 @@ function ShowGarment() {
                             href={`https://wa.me/1234567890?text=Me%20interesa%20este%20artículo:%20${garment.nombre}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-lg transition-all"
+                            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-lg transition-all w-full sm:w-auto"
                         >
                             <FaWhatsapp size={20} />
                             Comprar
                         </a>
                     </div>
                 </div>
+
             </div>
             {/* Botón de scroll al inicio */}
             <ScrollToTopButton />
