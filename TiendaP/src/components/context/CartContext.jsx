@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
-// Crear el contexto del carrito
 const CartContext = createContext();
 
 // Proveedor del carrito
@@ -8,10 +7,10 @@ export const CartProvider = ({ children }) => {
   // Leer el carrito desde el localStorage al inicializar el estado
   const [cart, setCart] = useState(() => {
     const storedCart = localStorage.getItem('cart');
-    return storedCart ? JSON.parse(storedCart) : []; // Si hay un carrito en localStorage, lo usamos
+    return storedCart ? JSON.parse(storedCart) : []; // Si hay un carrito en localStorage, se usa
   });
 
-  // Función para agregar al carrito
+  // agregar al carrito
   const addToCart = (item) => {
     setCart((prevCart) => {
       const newCart = [...prevCart, item];
@@ -20,7 +19,7 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // Función para eliminar del carrito
+  // eliminar del carrito
   const removeFromCart = (id) => {
     setCart((prevCart) => {
       const newCart = prevCart.filter((item) => item.id !== id);
