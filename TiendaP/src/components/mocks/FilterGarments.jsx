@@ -5,7 +5,7 @@ const categories = {
     Hombres: {
         Camisas: ["Manga Corta", "Manga Larga", "Estampadas", "Lisas"],
         Camisetas: ["Manga Corta", "Manga Larga", "Oversize", "Con Estampado"],
-        Pantalones: ["Jeans", "Slim Fit", "Regular Fit", "Skinny", "Joggers", "Casual", "Deportivo"],
+        Pantalones: ["Jeans", "Drill", "Slim Fit", "Regular Fit", "Skinny", "Joggers", "Casual", "Deportivo"],
         Chaquetas: ["Sin Capota", "Con Capota", "Blazers", "Gabanes"],
         Buzos: ["Básicos", "Estampados", "Cremallera", "Con Capucha"],
 
@@ -21,89 +21,79 @@ const categories = {
     },
 };
 
-function FilterMenu({ onFilterChange }) {
-    const [selectedGender, setSelectedGender] = useState('');
-    const [selectedType, setSelectedType] = useState('');
-    const [selectedSubType, setSelectedSubType] = useState('');
-
-    const handleGenderChange = (e) => {
-        setSelectedGender(e.target.value);
-        onFilterChange(e.target.value, selectedType, selectedSubType);
+const FilterMenu = ({ filters, onFilterChange }) => {
+    const handleGenderChange = (event) => {
+        onFilterChange("genero", event.target.value);
     };
 
-    const handleTypeChange = (e) => {
-        setSelectedType(e.target.value);
-        onFilterChange(selectedGender, e.target.value, selectedSubType);
+    const handleTypeChange = (event) => {
+        onFilterChange("tipo", event.target.value);
     };
 
-    const handleSubTypeChange = (e) => {
-        setSelectedSubType(e.target.value);
-        onFilterChange(selectedGender, selectedType, e.target.value);
+    const handleSubTypeChange = (event) => {
+        onFilterChange("subTipo", event.target.value);
     };
+
+    const types = filters.genero ? Object.keys(categories[filters.genero] || {}) : [];
+    const subTypes = filters.tipo ? categories[filters.genero][filters.tipo] : [];
 
     return (
-        <>
-            <div className="filter-menu p-6 bg-white shadow-lg rounded-lg w-full md:w-10/12 space-y-4 md:space-y-0 md:flex md:space-x-6 md:justify-start">
-                <h2 className="text-xl font-semibold text-center text-gray-700 md:text-left">Filtrar Productos</h2>
-
-                {/* Gender filter */}
-                <div className="w-full md:w-3/3">
-                    <label className="block text-sm font-medium text-gray-600">Género</label>
-                    <select
-                        onChange={handleGenderChange}
-                        value={selectedGender}
-                        className="mt-2 block w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
-                    >
-                        <option value="">Seleccionar Género</option>
-                        {Object.keys(categories).map(gender => (
-                            <option key={gender} value={gender}>
-                                {gender}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                {/* Type filter */}
-                {selectedGender && (
-                    <div className="w-full md:w-3/3">
-                        <label className="block text-sm font-medium text-gray-600">Tipo</label>
-                        <select
-                            onChange={handleTypeChange}
-                            value={selectedType}
-                            className="mt-2 block w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
-                        >
-                            <option value="">Seleccionar Tipo</option>
-                            {Object.keys(categories[selectedGender]).map(type => (
-                                <option key={type} value={type}>
-                                    {type}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                )}
-
-                {/* Subtype filter */}
-                {selectedType && selectedGender && (
-                    <div className="w-full md:w-3/3">
-                        <label className="block text-sm font-medium text-gray-600">Subtipo</label>
-                        <select
-                            onChange={handleSubTypeChange}
-                            value={selectedSubType}
-                            className="mt-2 block w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
-                        >
-                            <option value="">Seleccionar Subtipo</option>
-                            {categories[selectedGender][selectedType].map(subType => (
-                                <option key={subType} value={subType}>
-                                    {subType}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                )}
+        <div className="flex flex-wrap gap-4 p-4 bg-gray-100 rounded-lg shadow-md opacity-90">
+            {/* Filtro de Género */}
+            <div className="flex-1">
+                <select
+                    onChange={handleGenderChange}
+                    value={filters.genero}
+                    className="w-full p-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    <option value="">Seleccionar Género</option>
+                    {Object.keys(categories).map((gender) => (
+                        <option key={gender} value={gender}>
+                            {gender}
+                        </option>
+                    ))}
+                </select>
             </div>
-        </>
-    )
-}
+
+            {/* Filtro de Tipo */}
+            <div className="flex-1">
+                <select
+                    onChange={handleTypeChange}
+                    value={filters.tipo}
+                    disabled={!filters.genero}
+                    className={`w-full p-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${!filters.genero ? 'opacity-50 cursor-not-allowed' : ''
+                        }`}
+                >
+                    <option value="">Seleccionar Tipo</option>
+                    {types.map((type) => (
+                        <option key={type} value={type}>
+                            {type}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+            {/* Filtro de Subtipo */}
+            <div className="flex-1">
+                <select
+                    onChange={handleSubTypeChange}
+                    value={filters.subTipo}
+                    disabled={!filters.tipo}
+                    className={`w-full p-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${!filters.tipo ? 'opacity-50 cursor-not-allowed' : ''
+                        }`}
+                >
+                    <option value="">Seleccionar Subtipo</option>
+                    {subTypes.map((subType) => (
+                        <option key={subType} value={subType}>
+                            {subType}
+                        </option>
+                    ))}
+                </select>
+            </div>
+        </div>
+
+    );
+};
 
 export default FilterMenu;
 
