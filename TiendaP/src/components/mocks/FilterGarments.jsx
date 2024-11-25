@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from "react";
 
 // Definir categorías y subcategorías
 const categories = {
@@ -8,16 +8,13 @@ const categories = {
         Pantalones: ["Jeans", "Drill", "Slim Fit", "Regular Fit", "Skinny", "Joggers", "Casual", "Deportivo"],
         Chaquetas: ["Sin Capota", "Con Capota", "Blazers", "Gabanes"],
         Buzos: ["Básicos", "Estampados", "Cremallera", "Con Capucha"],
-
-
     },
     Mujeres: {
         Blusas: ["Manga Corta", "Manga Larga", "Con Estampado", "Básicas", "Elegantes"],
         Vestidos: ["Casuales", "De Noche", "De Oficina", "Con Estampados", "Largos"],
         Faldas: ["Cortas", "Largas", "Con Estampado", "De Cintura Alta"],
-        Chaquetas: ["Sin Capota", "Con Capota", "Blazers", "Gabanes", "Cuero",],
-        Vaqueros: ["Skinny", "Mom Fit", "Bootcut", "De Cintura Alta",]
-
+        Chaquetas: ["Sin Capota", "Con Capota", "Blazers", "Gabanes", "Cuero"],
+        Vaqueros: ["Skinny", "Mom Fit", "Bootcut", "De Cintura Alta"],
     },
 };
 
@@ -38,13 +35,13 @@ const FilterMenu = ({ filters, onFilterChange }) => {
     const subTypes = filters.tipo ? categories[filters.genero][filters.tipo] : [];
 
     return (
-        <div className="flex flex-wrap gap-4 p-4 bg-gray-100 rounded-lg shadow-md opacity-90">
+        <div className="flex flex-wrap gap-4 p-4 bg-gray-50 text-gray-700 rounded-lg shadow-sm">
             {/* Filtro de Género */}
             <div className="flex-1">
                 <select
                     onChange={handleGenderChange}
                     value={filters.genero}
-                    className="w-full p-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 bg-white text-gray-700 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
                 >
                     <option value="">Seleccionar Género</option>
                     {Object.keys(categories).map((gender) => (
@@ -61,7 +58,7 @@ const FilterMenu = ({ filters, onFilterChange }) => {
                     onChange={handleTypeChange}
                     value={filters.tipo}
                     disabled={!filters.genero}
-                    className={`w-full p-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${!filters.genero ? 'opacity-50 cursor-not-allowed' : ''
+                    className={`w-full p-2 bg-white text-gray-700 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400 ${!filters.genero ? "opacity-50 cursor-not-allowed" : ""
                         }`}
                 >
                     <option value="">Seleccionar Tipo</option>
@@ -79,7 +76,7 @@ const FilterMenu = ({ filters, onFilterChange }) => {
                     onChange={handleSubTypeChange}
                     value={filters.subTipo}
                     disabled={!filters.tipo}
-                    className={`w-full p-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${!filters.tipo ? 'opacity-50 cursor-not-allowed' : ''
+                    className={`w-full p-2 bg-white text-gray-700 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400 ${!filters.tipo ? "opacity-50 cursor-not-allowed" : ""
                         }`}
                 >
                     <option value="">Seleccionar Subtipo</option>
@@ -91,9 +88,7 @@ const FilterMenu = ({ filters, onFilterChange }) => {
                 </select>
             </div>
         </div>
-
     );
 };
 
 export default FilterMenu;
-
