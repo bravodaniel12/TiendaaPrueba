@@ -14,11 +14,11 @@ function CartPage() {
   return (
     <>
       {/* Marquee */}
-      <div className="bg-black text-white fixed top-0 w-full z-50">
-        <marquee className="py-2" scrollamount="8">
-          - Ropa nueva todas las semanas🔥 - Estilos y tendencias😲😮 - Lo Mejor en calzado 👟 - ¡Descubre nuestras ofertas exclusivas!♥️ - Promociones imperdibles🤑💸
-        </marquee>
-      </div>
+      <div className="bg-burdeos text-white fixed top-0 w-full z-50">
+				<marquee className="py-2" scrollamount="8">
+					- Ropa nueva todas las semanas🔥 - Estilos y tendencias😲😮 - Lo mejor en calzado 👟 - ¡Descubre nuestras ofertas exclusivas!♥️ - Promociones imperdibles🤑💸
+				</marquee>
+			</div>
       <Header />
       <div className="p-10 mt-4">
         <h1 className="text-3xl xs:text-4xl font-bold text-gray-800 mb-6">Carrito de Compras</h1>
@@ -28,7 +28,7 @@ function CartPage() {
         ) : (
           <div className={`grid ${cart.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'} gap-8`}>
             {cart.map((item, index) => (
-              <div key={index} className="flex items-center bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div key={index} className="flex items-center bg-white p-4 border border-dorado rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
 
                 {/* Imagen */}
                 <div
