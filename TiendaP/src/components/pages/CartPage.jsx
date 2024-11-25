@@ -64,7 +64,7 @@ function CartPage() {
         <div className="mt-8">
           <Link
             to="/"
-            className="text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded-md shadow-md transition duration-300"
+            className="text-lg font-medium text-white bg-burdeos hover:bg-burdeos-claro py-2 px-4 rounded-md shadow-md transition duration-300"
           >
             Seguir comprando
           </Link>
