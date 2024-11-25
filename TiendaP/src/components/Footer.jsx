@@ -23,7 +23,7 @@ function Footer() {
               <ul className="space-y-2 text-sm">
                 <li>📞 Teléfono: +57 123 456 7890</li>
                 <li>📧 Email: contacto@tienda.com</li>
-                <li>📍 Dirección: Calle 123, Ciudad, País</li>
+                <li>📍 Dirección: Calle 123, Isnos - Huila, Colombia</li>
               </ul>
             </div>
 
