@@ -70,7 +70,7 @@ function Start() {
 				</h1>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-content-between">
 					{filteredShops.map((shop, index) => {
-						const { id, nombre, precio, img, imgHover } = shop;
+						const { id, nombre, precio, img, imgHover, descripcion } = shop;
 
 						return (
 							<div key={index} className="flex justify-center">
@@ -105,7 +105,7 @@ function Start() {
 											${precio}
 										</p>
 										<p className="text-sm text-gray-500">
-											Camisa básica, corte V
+											{descripcion}
 										</p>
 									</div>
 
