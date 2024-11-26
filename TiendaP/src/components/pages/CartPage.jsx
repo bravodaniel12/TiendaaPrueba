@@ -1,6 +1,5 @@
-// src/components/pages/CartPage.jsx
 import React from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useCart } from '../context/CartContext';
@@ -15,24 +14,38 @@ function CartPage() {
     <>
       {/* Marquee */}
       <div className="bg-burdeos text-white fixed top-0 w-full z-50">
-				<marquee className="py-2" scrollamount="8">
-					- Ropa nueva todas las semanas🔥 - Estilos y tendencias😲😮 - Lo mejor en calzado 👟 - ¡Descubre nuestras ofertas exclusivas!♥️ - Promociones imperdibles🤑💸
-				</marquee>
-			</div>
+        <marquee className="py-2" scrollamount="8">
+          - Ropa nueva todas las semanas🔥 - Estilos y tendencias😲😮 - Lo mejor en calzado 👟 - ¡Descubre nuestras ofertas exclusivas!♥️ - Promociones imperdibles🤑💸
+        </marquee>
+      </div>
       <Header />
-      <div className="p-10 mt-4">
+
+      {/* Contenedor principal */}
+      <div className="p-10 mt-4 min-h-screen">
         <h1 className="text-3xl xs:text-4xl font-bold text-gray-800 mb-6">Carrito de Compras</h1>
 
         {cart.length === 0 ? (
-          <p className="text-lg text-gray-600">No hay productos en el carrito.</p>
+          <div className="flex flex-col items-center justify-center h-96">
+            {/* Contenedor del círculo */}
+            <div className="relative flex items-center justify-center">
+              {/* Círculo en blanco y negro */}
+              <div className="w-80 h-80 rounded-full bg-gray-100 flex items-center justify-center shadow-inner">
+                <img
+                  src="https://http2.mlstatic.com/D_NQ_NP_866487-CBT74764289231_022024-O.webp"
+                  alt="Decorativo"
+                  className="w-56 h-56 object-contain grayscale rounded-full"
+                />
+              </div>
+            </div>
+            <p className="text-lg text-gray-600 mt-6">Tu carrito está vacío.</p>
+          </div>
         ) : (
           <div className={`grid ${cart.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'} gap-8`}>
             {cart.map((item, index) => (
               <div key={index} className="flex items-center bg-white p-4 border border-dorado rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
-
                 {/* Imagen */}
                 <div
-                  className="shadow-md opacity-100 hover:opacity-50 transition-opacity duration-300 cursor-pointer"
+                  className="shadow-md opacity-100 hover:opacity-80 transition-opacity duration-300 cursor-pointer"
                   onClick={() => navigate(`/prenda/${item.id}`)}
                 >
                   <img
