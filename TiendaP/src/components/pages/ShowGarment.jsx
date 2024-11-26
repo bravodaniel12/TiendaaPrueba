@@ -48,17 +48,26 @@ function ShowGarment() {
             <div className="flex flex-col lg:flex-row items-center justify-center px-6 sm:px-10 md:px-16 lg:px-40 xl:px-60 p-10 xs:p-2 md:mt-14 gap-10">
                 {/* Subimágenes */}
                 {garment.subImages && garment.subImages.length > 0 && (
-                    <div className="flex flex-row lg:flex-col items-center gap-4 lg:gap-6">
+                    <div
+                        className={`grid gap-4 lg:gap-6 ${garment.subImages.length > 4
+                            ? "grid-cols-2 lg:grid-cols-1"
+                            : "flex flex-row lg:flex-col items-center"
+                            }`}
+                    >
                         {garment.subImages.map((img, index) => (
                             <img
                                 key={index}
                                 src={img}
                                 alt={`Subimagen ${index + 1}`}
-                                className={`xl:w-40 w-24 h-20 object-cover rounded-lg shadow-lg cursor-pointer transition-all ${selectedImage === img ? "border-2 border-azul-marino scale-105" : ""}`}
+                                className={`xl:w-40 w-24 h-20 object-cover rounded-lg shadow-lg cursor-pointer transition-all ${selectedImage === img
+                                    ? "border-2 border-azul-marino scale-105"
+                                    : ""
+                                    }`}
                                 onClick={() => setSelectedImage(img)}
                             />
                         ))}
                     </div>
+
                 )}
 
                 {/* Imagen seleccionada con zoom */}
