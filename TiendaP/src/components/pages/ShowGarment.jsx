@@ -86,6 +86,7 @@ function ShowGarment() {
                     <h1 className="text-4xl font-bold text-azul-marino">{garment.nombre}</h1>
                     <p className="text-xl font-semibold text-dorado">Precio: ${garment.precio}</p>
                     <p className="text-gray-600">{garment.descripcion}</p>
+                    <p className="text-gray-600">{garment.material}</p>
 
                     {/* Botones */}
                     <div className="flex flex-col sm:flex-row justify-center gap-4 xs:gap-2">
