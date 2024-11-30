@@ -124,7 +124,9 @@ function Start() {
 										{/* Botón Comprar */}
 										<div className="mt-4 flex justify-center">
 											<a
-												href={`https://wa.me/1234567890?text=Me%20interesa%20este%20articulo%20${nombre}`}
+												href={`https://wa.me/573102097617?text=${encodeURIComponent(
+													`Hola, me interesa este artículo: ${nombre}. Aquí está la imagen: ${img}`
+												)}`}
 												target="_blank"
 												className="bg-burdeos text-white py-2 px-4 rounded-lg text-sm hover:bg-burdeos-claro transition-colors duration-300"
 												rel="noopener noreferrer"
@@ -132,6 +134,7 @@ function Start() {
 												Comprar
 											</a>
 										</div>
+
 									</div>
 								</div>
 							);

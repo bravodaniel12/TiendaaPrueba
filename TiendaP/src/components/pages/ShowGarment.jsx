@@ -98,7 +98,7 @@ function ShowGarment() {
                             Agregar al carrito
                         </button>
                         <a
-                            href={`https://wa.me/1234567890?text=Me%20interesa%20este%20artículo:%20${garment.nombre}`}
+                            href={`https://wa.me/3102097617?text=Me%20interesa%20este%20artículo:%20${garment.nombre}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-lg transition-all w-full sm:w-auto"
