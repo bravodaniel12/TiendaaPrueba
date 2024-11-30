@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { shops } from "../mocks/MockIndex";
-import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
+import { FaShoppingCart, FaWhatsapp, FaDollarSign, FaInfoCircle, FaTags } from "react-icons/fa"; // Importar nuevos iconos
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import { useCart } from "../context/CartContext";
@@ -67,7 +67,6 @@ function ShowGarment() {
                             />
                         ))}
                     </div>
-
                 )}
 
                 {/* Imagen seleccionada con zoom */}
@@ -84,9 +83,18 @@ function ShowGarment() {
                 {/* Información del producto */}
                 <div className="flex flex-col gap-6 max-w-lg mx-auto">
                     <h1 className="text-4xl font-bold text-azul-marino">{garment.nombre}</h1>
-                    <p className="text-xl font-semibold text-dorado">Precio: ${garment.precio}</p>
-                    <p className="text-gray-600">{garment.descripcion}</p>
-                    <p className="text-gray-600">{garment.material}</p>
+                    <div className="flex items-center gap-2">
+                        <FaDollarSign size={24} className="text-green-500" />
+                        <p className="text-xl font-semibold text-dorado">Precio: ${garment.precio}</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <FaInfoCircle size={24} className="text-gray-600" />
+                        <p className="text-gray-600">{garment.descripcion}</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <FaTags size={24} className="text-gray-600" />
+                        <p className="text-gray-600">{garment.material}</p>
+                    </div>
 
                     {/* Botones */}
                     <div className="flex flex-col sm:flex-row justify-center gap-4 xs:gap-2">
