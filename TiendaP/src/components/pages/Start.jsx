@@ -125,7 +125,7 @@ function Start() {
 										<div className="mt-4 flex justify-center">
 											<a
 												href={`https://wa.me/573102097617?text=${encodeURIComponent(
-													`Hola, me interesa este artículo: ${nombre}. Aquí está la imagen: ${img}`
+													`Hola, me interesa este artículo: ${nombre}. Aquí está la imagen: ${img}. Puedes ver más detalles aquí: ${window.location.origin}/prenda/${id}`
 												)}`}
 												target="_blank"
 												className="bg-burdeos text-white py-2 px-4 rounded-lg text-sm hover:bg-burdeos-claro transition-colors duration-300"
@@ -134,6 +134,8 @@ function Start() {
 												Comprar
 											</a>
 										</div>
+
+
 
 									</div>
 								</div>
