@@ -8,4 +8,4 @@ Desarrollar un sistema para la gestión de una tienda de ropa, permitiendo a los
 
 
 ## Estructura de carpetas:
-- `/frontend`: Carpeta que contiene la aplicación móvil.
+- `/frontend`: Carpeta que contiene la página web.
