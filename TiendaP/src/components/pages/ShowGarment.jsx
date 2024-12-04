@@ -110,7 +110,7 @@ function ShowGarment() {
                                 `Hola, me interesa este artículo: ${garment.nombre}. Aquí está la imagen: ${garment.img}. Puedes ver más detalles aquí: ${window.location.origin}/prenda/${garment.id}`
                             )}`}
                             target="_blank"
-                            className="bg-burdeos text-white py-2 px-4 rounded-lg text-sm hover:bg-burdeos-claro transition-colors duration-300"
+                          className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-lg transition-all w-full sm:w-auto"
                             rel="noopener noreferrer"
                         >
                             <FaWhatsapp size={20} />
