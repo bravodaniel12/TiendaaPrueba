@@ -116,11 +116,10 @@ function Start() {
 												{nombre}
 											</h3>
 											<p className="font-serif text-dorado font-semibold text-lg py-2">
-												${precio}
+												${precio.toLocaleString('es-CO')}
 											</p>
 											<p className="text-sm text-gray-500">{descripcion}</p>
 										</div>
-
 										{/* Botón Comprar */}
 										<div className="mt-4 flex justify-center">
 											<a
