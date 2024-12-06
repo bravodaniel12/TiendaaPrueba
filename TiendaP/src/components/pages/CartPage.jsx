@@ -58,7 +58,7 @@ function CartPage() {
                 {/* Información del Producto */}
                 <div className="flex-1 text-left">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.nombre}</h3>
-                  <p className="text-lg text-gray-700 mb-4">${item.precio}</p>
+                  <p className="text-lg text-gray-700 mb-4">${item.precio.toLocaleString('es-CO')}</p>
                 </div>
 
                 {/* Botón Eliminar */}

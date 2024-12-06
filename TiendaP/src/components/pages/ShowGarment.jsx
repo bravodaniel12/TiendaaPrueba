@@ -85,7 +85,8 @@ function ShowGarment() {
                     <h1 className="text-4xl font-bold text-azul-marino">{garment.nombre}</h1>
                     <div className="flex items-center gap-2">
                         <FaDollarSign size={24} className="text-green-500" />
-                        <p className="text-xl font-semibold text-dorado">Precio: ${garment.precio}</p>
+                        <p className="text-xl font-semibold text-dorado">Precio: ${garment.precio.toLocaleString('es-CO')}</p>
+
                     </div>
                     <div className="flex items-center gap-2">
                         <FaInfoCircle size={24} className="text-gray-600" />
@@ -110,7 +111,7 @@ function ShowGarment() {
                                 `Hola, me interesa este artículo: ${garment.nombre}. Aquí está la imagen: ${garment.img}. Puedes ver más detalles aquí: ${window.location.origin}/prenda/${garment.id}`
                             )}`}
                             target="_blank"
-                          className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-lg transition-all w-full sm:w-auto"
+                            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-lg transition-all w-full sm:w-auto"
                             rel="noopener noreferrer"
                         >
                             <FaWhatsapp size={20} />
