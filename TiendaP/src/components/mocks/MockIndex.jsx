@@ -5,49 +5,49 @@ export const shops = [
 		id: 1,
 		genero: "Hombres",
 		nombre: "Camiseta leñador",
-		precio: 50000,
-		img: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		imgHover: "https://images.pexels.com/photos/1304647/pexels-photo-1304647.jpeg?auto=compress&cs=tinysrgb&w=400", // Imagen que aparece al pasar el cursor
+		precio: 60000,
+		img: "https://th.bing.com/th/id/OIP.PkZ4T8g1awfuHKPXylescwHaHa?w=555&h=555&rs=1&pid=ImgDetMain",
+		imgHover: "https://m.media-amazon.com/images/I/51sEhl2H+BL.jpg", // Imagen que aparece al pasar el cursor
 		tipo: "Camisetas",
 		subtipo: "Manga Larga",
-		descripcion: "Camisa básica color gris con corte en V",
+		descripcion: "Colores basicos en tus prendas favoritas",
 		material: "Algodon",
 		subImages: [
-			"https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-			"https://images.pexels.com/photos/1503009/pexels-photo-1503009.jpeg?auto=compress&cs=tinysrgb&w=600",
-			"https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&w=600", // Imagen que aparece al pasar el cursor
+			"https://m.media-amazon.com/images/I/51sEhl2H+BL.jpg",
+			"https://th.bing.com/th/id/OIP.PkZ4T8g1awfuHKPXylescwHaHa?w=555&h=555&rs=1&pid=ImgDetMain",
+			"https://m.media-amazon.com/images/I/51WGGqCEOJL.jpg", // Imagen que aparece al pasar el cursor
 		],
 	},
 	{
 		id: 2,
 		genero: "Hombres",
 		nombre: "Tenis Deportivos",
-		precio: 10000,
-		img: "https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600",
-		imgHover: "https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&w=600", // Imagen que aparece al pasar el cursor
+		precio: 200000,
+		imgHover: "https://http2.mlstatic.com/tenis-zapatillas-nike-presto-bota-jk-para-hombre-D_NQ_NP_740281-MCO26446439254_112017-F.jpg",
+		img: "https://http2.mlstatic.com/tenis-nike-presto-extreme-caballero-2017-D_NQ_NP_956825-MCO25524932393_042017-F.jpg", // Imagen que aparece al pasar el cursor
 		tipo: "Camisetas",
 		subtipo: "Manga Larga",
-		descripcion: "Tenis deportivos cómodos y elegantes",
-		material: "Algodon",
+		descripcion: "Lo mejor en Tenis NIke Presto",
+		material: "Diversos materiales",
 		subImages: [
-			"https://images.pexels.com/photos/3287160/pexels-photo-3287160.jpeg?auto=compress&cs=tinysrgb&w=600",
-			"https://images.pexels.com/photos/1503009/pexels-photo-1503009.jpeg?auto=compress&cs=tinysrgb&w=600",
+			"https://http2.mlstatic.com/tenis-zapatillas-nike-presto-bota-jk-para-hombre-D_NQ_NP_740281-MCO26446439254_112017-F.jpg",
+			"https://http2.mlstatic.com/tenis-nike-presto-extreme-caballero-2017-D_NQ_NP_956825-MCO25524932393_042017-F.jpg",
 		],
 	},
 	{
 		id: 3,
 		genero: "Hombres",
-		nombre: "Saco hippie",
-		precio: 20000,
-		img: "https://images.pexels.com/photos/3739943/pexels-photo-3739943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		imgHover: "https://images.pexels.com/photos/3206122/pexels-photo-3206122.jpeg?auto=compress&cs=tinysrgb&w=400",// Imagen que aparece al pasar el cursor
+		nombre: "Zapatillas Urbanas Nort Star Hem",
+		precio: 140000,
+		img: "https://bataperu.vtexassets.com/arquivos/ids/380179-800-auto?v=638617498578430000&width=800&height=auto&aspect=true",
+		imgHover: "https://bataperu.vtexassets.com/arquivos/ids/380177-800-auto?v=638617498368870000&width=800&height=auto&aspect=true",// Imagen que aparece al pasar el cursor
 		tipo: "Buzo",
-		subtipo: "Con capucha",
-		descripcion: "Buzo en tela organica,algodon 100% talla XL ",
-		material: "Algodon",
+		subtipo: "Sin capucha",
+		descripcion: "Tenemos desde la talla 38 en adelante",
+		material: "Diversos materiales",
 		subImages: [
-			"https://images.pexels.com/photos/3206122/pexels-photo-3206122.jpeg?auto=compress&cs=tinysrgb&w=400",
-			"https://images.pexels.com/photos/3206081/pexels-photo-3206081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+			"https://bataperu.vtexassets.com/arquivos/ids/380177-800-auto?v=638617498368870000&width=800&height=auto&aspect=true",
+			"https://bataperu.vtexassets.com/arquivos/ids/380179-800-auto?v=638617498578430000&width=800&height=auto&aspect=true",
 		],
 	},
 	// {
